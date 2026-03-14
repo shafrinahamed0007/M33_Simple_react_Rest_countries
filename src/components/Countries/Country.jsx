@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./Country.css";
 
-export default function Country({ country }) {
+export default function Country({ country, handleVisitedCountries }) {
   const [visited, setVisited] = useState(false);
+  // console.log(handleVisitedCountries);
 
   const handleVisited = () => {
     // basic system
@@ -16,11 +17,12 @@ export default function Country({ country }) {
     // setVisited(visited ? false : true);
 
     // 3rd system
-    setVisited(!visited)
+    setVisited(!visited);
+    handleVisitedCountries(country);
   };
 
   return (
-    <div className={`country ${visited && 'country-visited'}`}>
+    <div className={`country ${visited && "country-visited"}`}>
       <img src={country?.flags?.flags?.png} alt={country?.flags?.flags?.alt} />
       <p>Name: {country?.name?.common}</p>
       <p>Capital: {country?.capital?.capital[0]}</p>
