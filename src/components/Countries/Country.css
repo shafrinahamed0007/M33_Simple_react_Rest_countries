@@ -5,3 +5,7 @@
     border-radius: 20px;
 
 }
+
+.country-visited{
+    border: 2px solid green;
+}
