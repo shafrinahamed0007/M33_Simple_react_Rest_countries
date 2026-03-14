@@ -5,7 +5,10 @@ export default function Country({ country }) {
 
   return (
     <div>
-        <p>Name: {name.common}</p>
+        <img src={country?.flags?.flags?.png} alt={country?.flags?.flags?.alt} />
+        <p>Name: {name?.common}</p>
+        <p>Capital: {country?.capital?.capital[0]}</p>
+        <p>Population: {country?.population?.population}</p>
     </div>
   )
 }
